@@ -192,10 +192,13 @@ body{
     width: 100vw;
     height: 50vh;
     background: #2A1A03;
-    background: url('https://images.wallpaperscraft.com/image/house_residential_design_beautifully_13642_1920x1200.jpg');
+/*    background: url('https://images.wallpaperscraft.com/image/house_residential_design_beautifully_13642_1920x1200.jpg');*/
     padding: 20px;
     color: #fff;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mini-landing:before{
@@ -215,7 +218,6 @@ body{
     display: flex;
     align-items: center;
     position: relative;
-    top: 120px;
 }
 
 .mini-landing div{
@@ -258,6 +260,7 @@ body{
     max-width: 960px;
     box-sizing: content-box;
     margin: 1rem auto;
+    padding: 0 1rem;
 }
 
 .posts .post{

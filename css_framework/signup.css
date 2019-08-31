@@ -1,0 +1,101 @@
+:root{
+   --form-red: red; 
+}
+
+.top-menu{
+    position: relative;
+    z-index: 2;
+    opacity: 0.5;
+    transition: all 0.4s;
+}
+
+.top-menu:hover{
+    opacity: 1;
+}
+.signup-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+}
+.signup-box{
+    width: 400px;
+    border-radius: 5px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.signup-box h1{
+   text-align: center;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0.7;
+    margin-bottom: 4px;
+}
+
+.signup-box h1 a{
+    font-weight: 600;
+    font-family: 'Ubuntu', sans-serif;
+    color: inherit;
+}
+
+.signup-box h2{
+    font-weight: 100;
+    text-align: center;
+    margin-top: 0;
+}
+
+
+.signup-box input{
+    width: 100%;
+    margin: 6px 0;
+}
+
+.signup-box input::placeholder{
+    opacity: 0.6;
+}
+
+.signup-box button{
+    margin: 8px auto;
+    width: 100%;
+}
+
+.signup-box .login p{
+    color: gray;
+    font-size: 0.8rem;
+    text-align: center;
+    width: 100%;
+}
+
+.red-border{
+    border-color: var(--form-red);
+}
+
+/* Hide arrows of input[type=number] */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+#required_text{
+    text-align: center;
+    color: var(--form-red);
+
+}
+
+.invalid-field{
+    color: var(--form-red);
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+}
