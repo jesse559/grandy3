@@ -65,20 +65,6 @@ document.querySelector('form').addEventListener('submit', (e) => {
     }
 
     onPhone(e);
-/*
-    if (password.value && passwordRepeat.value) {
-        if (password.value != passwordRepeat.value){
-            success = true;
-            if (!document.getElementById(idPassMismatch)){
-                let p = document.createElement('p');
-                p.id = idPassMismatch;
-                p.classList.add('invalid-field');
-                p.innerHTML = 'Passwords don\'t match:';
-                password.before(p);
-            }
-        }
-    }
-*/
     passwords_blur(e);
 
     if (success){
