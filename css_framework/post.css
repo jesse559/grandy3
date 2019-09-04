@@ -1,0 +1,74 @@
+.top-menu{
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+.page .wrapper{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.main-post{
+    margin: 1rem 0;
+}
+
+.main-post .available-now h2, p{
+    margin: 0;
+    padding: 0;
+}
+
+.available-now{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.available-now h2{
+    font-family: 'Ubuntu', sans-serif;
+    color: yellowgreen;
+}
+
+.available-now h2 span{
+    color: gray;
+    font-size: 70%;
+    opacity: 0.6;
+}
+
+.main-post .images{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.main-post .images img{
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    max-width: 100%;
+    object-fit: cover;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.main-post .images img:hover{
+    transform: translate(0px, -5px);
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.2);
+}
+
+.top-menu{
+}
+
+.top-menu input{
+    color: ;
+}
+
+body{
+    background: #fff;
+}
+
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.title{
+
+}

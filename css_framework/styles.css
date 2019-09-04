@@ -23,6 +23,11 @@
     outline: none;
 }
 
+.wrapper{
+    max-width: 1080px;
+    margin: auto;
+}
+
 a{
     text-decoration: none;
     color: var(--link-color);
@@ -108,7 +113,7 @@ input{
     font-size: 1rem;
 }
 
-input:focus{
+input:focus, .focus{
     box-shadow: 0 0 2px 2px #724b571f;
     border-color: var(--primary-color);
 }
@@ -395,7 +400,23 @@ body{
     padding-top: 0;
     display: flex;
     flex-direction: row-reverse;
+    width: 100%;
+}
+
+.post .footer *{
+    margin: 0;
+    padding: 5px;
 }
 
 .post .footer button{
+    margin-left: 10px;
+    text-transform: unset;
+    white-space: nowrap;
+    width: max-content;
+}
+
+.post .footer  input[type='text']{
+    font-size: 0.8rem;
+    color: #404040;
+    width: 100%;
 }

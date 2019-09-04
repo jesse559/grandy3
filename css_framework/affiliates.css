@@ -80,3 +80,9 @@
     font-size: 1.4rem;
     padding: 1rem 2rem;
 }
+
+/* Page 1 */
+.page{
+    width: 100vw;
+    height: 100vh;
+}
