@@ -1,16 +1,18 @@
 let url_btns = document.getElementsByClassName('url-btn');
+document.addEventListener('DOMContentLoaded', ready);
 
 for (let item of url_btns) {
     on_hover(item, btn_link_hover);
     item.addEventListener('click', copy_url);
 }
 
-function copy_url(e){
+function copy_url(e) {
     let target = e.target;
     let input = e.target.parentElement.querySelector('input[type=text]');
 
     copyTextToClipboard(input.value);
     input.select();
+
 }
 
 function on_hover(element, func) {
@@ -57,4 +59,36 @@ function copyTextToClipboard(text) {
     }, function (err) {
         console.error('Async: Could not copy text: ', err);
     });
+}
+
+function ready(e) {
+    setPostHeight();
+    window.addEventListener('resize', setPostHeight);
+}
+
+function setPostHeight() {
+    let body_width = document.body.clientWidth;
+    let posts_images = document.querySelectorAll('.images');
+    let ratio = (16 / 6.2);
+
+    if (body_width < 800) {
+        ratio = (16 / 7);
+    }
+
+    if (body_width < 600) {
+        ratio = (16 / 9);
+    }
+
+    for (let i = 0; i < posts_images.length; i++) {
+        let p = posts_images[i];
+        p.style.height = String(Math.round((p.clientWidth / (ratio)))) + 'px';
+    }
+}
+
+function clearSelection() {
+    if (window.getSelection) {
+        window.getSelection().removeAllRanges(); 
+    } else if (document.selection) { 
+        document.selection.empty(); 
+    }
 }
