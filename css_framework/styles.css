@@ -39,7 +39,7 @@ a:hover{
     color: var(--link-color-hover);
 }
 
-button{
+button, .btn{
     border: none;
     color: #fff;
     background: var(--primary-color);
@@ -53,8 +53,14 @@ button{
     font-weight: 500;
 }
 
+
+
 .btn-black{
     background: var(--light-black);
+}
+
+.btn-blue{
+    background: var(--link-color);
 }
 
 button:hover{
@@ -71,6 +77,12 @@ button:hover{
     font-weight: 600;
     text-transform: none;
 }
+
+.border-btn.btn-blue{
+    color: var(--link-color);
+    border-color: var(--link-color);
+}
+
 
 .border-btn:hover{
     background: rgba(0, 0, 0, 0.1);
@@ -106,7 +118,7 @@ h1, h2, h3, h4, h5, h6{
     font-weight: 100;
 }
 
-input{
+input, textarea{
     margin: 1.5em 0;
     border: 1px solid #D3D3D3;
     padding: 5px 10px;
@@ -115,9 +127,13 @@ input{
     font-size: 1em;
 }
 
-input:focus, .focus{
+input:focus, textarea:focus, .focus{
     box-shadow: 0 0 2px 2px #724b571f;
     border-color: var(--primary-color);
+}
+
+ul{
+    list-style: none;
 }
 
 /* Page Specific */
@@ -136,6 +152,13 @@ body{
     width: 100%;
     padding: 5px; 
     margin: 0;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    /*
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    */
 }
 
 .top-menu *{
@@ -375,12 +398,12 @@ body{
 }
 
 .post-img-display div:nth-child(3){
-    grid-column: -3/-1;
+    grid-column: 7/-3;
     grid-row: 3/-1;
 }
 
 .post-img-display div:nth-child(4){
-    grid-column: 7/-3;
+    grid-column: -3/-1;
     grid-row: 3/-1;
 }
 
@@ -469,4 +492,56 @@ body{
         font-size: 0.8rem;
     }
 
+}
+
+/* Contact Agent Popup Box */
+.contact-agent-box::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: black;
+    z-index: 2;
+    opacity: 0.7;
+}
+
+.contact-agent-box > div{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.4);
+}
+
+.contact-agent-box *{
+    margin: 5px 1rem;
+}
+
+.contact-agent-box h3{
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    margin: 0;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.contact-agent-box textarea{
+    height: 7em;
+}
+
+.contact-agent-box button{
+    margin-bottom: 1rem;
 }

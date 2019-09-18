@@ -2,6 +2,10 @@
    --form-red: red; 
 }
 
+body{
+    background: #891E03;
+}
+
 .top-menu{
     position: relative;
     z-index: 2;
