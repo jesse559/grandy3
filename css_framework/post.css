@@ -12,6 +12,10 @@ img{
     object-fit: cover;
 }
 
+body > .wrapper{
+    margin-top: 4rem;
+}
+
 .wrapper{
     margin: 1.5rem auto;
 }
@@ -240,13 +244,3 @@ img{
     color: #140004;
 }
 
-.top-menu{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10000;
-}
-
-body > .wrapper{
-    margin-top: 4rem;
-}
