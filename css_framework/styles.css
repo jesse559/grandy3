@@ -331,13 +331,13 @@ body{
     background: rgba(0, 0, 0, 0.1);
 }
 
-.header .row1 .rs{
-    font-size: 2rem;
+/*.header .row1*/ .rs{
+    font-size: 2em;
     color: maroon;
 }
 
-.header .row1 .price{
-    font-size: 1.5rem;
+/*.header .row1*/ .price{
+    font-size: 1.5em;
     margin-left: 5px;
 }
 
