@@ -21,6 +21,7 @@ function setImageSize(items) {
     let height = Math.floor(size.y * (80/100));
 
     items.forEach((item, i) => {
+        /*
         if (!item._vertical) {
             items[i].w = width;
         } else {
@@ -28,6 +29,9 @@ function setImageSize(items) {
         }
 
         items[i].h = height;
+        */
+       items[i].w = 1920;
+       items[i].h = 1080;
     });
 }
 
@@ -66,6 +70,11 @@ function postDisplayClick(e) {
         links.push(imgDivs[i].src);
     }
 
+    links.push("https://images.wallpaperscraft.com/image/spikelets_dark_glare_148432_3840x2160.jpg");
+    links.push("https://images.wallpaperscraft.com/image/town_coast_aerial_view_148434_3840x2160.jpg");
+    links.push("https://images.wallpaperscraft.com/image/mountains_peaks_fog_148414_3840x2160.jpg");
+    links.push("https://images.wallpaperscraft.com/image/hand_light_bright_148410_3840x2160.jpg");
+
     let items = [];
 
     links.forEach(element => {
@@ -85,14 +94,43 @@ function postDisplayClick(e) {
         if (item.src == clickedImage.src) {
             index = i;
         }
+
     });
 
     let options = {
         index: index,
         closeOnScroll: false,
+        bgOpacity: 0.8,
+        getThumbBoundsFn: function(index) {
+
+            // find thumbnail element
+            var thumbnail = document.querySelectorAll('.post-img-display img')[index];
+            console.log(thumbnail);
+        
+            // get window scroll Y
+            var pageYScroll = window.pageYOffset || document.documentElement.scrollTop; 
+            // optionally get horizontal scroll
+        
+            // get position of element relative to viewport
+            var rect = thumbnail.getBoundingClientRect(); 
+        
+            // w = width
+            return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+        
+        
+            // Good guide on how to get element coordinates:
+            // http://javascript.info/tutorial/coordinates
+        }
     };
 
     let gallery = new PhotoSwipe(pswp, PhotoSwipeUI_Default, items, options);
+    gallery.listen('shareLinkClick', function(e, target) {
+        if (target.innerHTML === 'Download image') {
+        }
+        console.log(e);
+        console.log(target);
+        e.prevetDefault();
+    });
     gallery.init();
 
 }
